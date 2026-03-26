@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Уроки игры на гитаре</title>
+    <meta
+      name="description"
+      content="Лучший сайт для обучения игре на гитаре"
+    />
+  </head>
+  <body>
+    <main>
+      <!-- Шапка сайта -->
+      <header class="header">
+        <!-- контейнер для шапки -->
+        <div class="container header__inner">
+          <!-- Логотип школы гитары -->
+          <a href="#" class="header__logo">
+            <img
+              class="logo__image"
+              src="/src/icons/логотип.png"
+              alt="Логотип школы"
+            />
+          </a>
+          <!-- Навигационное меню -->
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li class="list__item"><a href="#about">ОБО МНЕ</a></li>
+              <li class="list__item"><a href="#lessons">ЗАНЯТИЯ</a></li>
+              <li class="list__item"><a href="#booking">ЗАПИСЬ</a></li>
+            </ul>
+          </nav>
+          <!-- контейнер с иконками инсты и телеграма -->
+          <div class="header__contacts">
+            <a
+              href="https://www.instagram.com/"
+              aria-label="instagram"
+              target="_blank"
+            >
+              <img
+                class="contacts-icon"
+                src="/src/icons/Инстгарам.svg"
+                alt="иконка инсты"
+              />
+            </a>
+            <a
+              href="https://t.me/@makdenunited"
+              aria-label="telegram"
+              target="_blank"
+            >
+              <img
+                class="contacts-icon"
+                src="/src/icons/телеграм.svg"
+                alt="иконка telegram"
+              />
+            </a>
+            <!-- кнопка позвонить в навигационном меню -->
+            <a class="btn-call" href="tel:+37377864480">ПОЗВОНИТЬ</a>
+          </div>
+        </div>
+      </header>
+      <!-- Первая секция -->
+      <section class="first__section">
+        <div class="container first__section-inner">
+          <div class="description__content">
+            <div class="description-text">
+              <h1>Акустическая<br />гитара:</h1>
+              <h2>Ваш путь к мастерству с Иваном</h2>
+              <p>
+                Привет! Рад приветствовать вас. Я — Иван, мастер игры на
+                акустической гитаре с многолетним опытом.
+              </p>
+              <br />
+              <p>
+                Моя страсть к этому инструменту безгранична, и я посвятил годы
+                изучению его звучания, техники и души. Я не просто учу аккордам
+                и переборам;
+              </p>
+              <br />
+              <p>
+                я помогаю каждому ученику почувствовать музыку, понять теорию и
+                найти свой уникальный стиль исполнения.
+              </p>
+            </div>
+            <div class="description-button">
+              <a class="btn-call button wsh" href="tel:+37377864480"
+                >Забронировать урок</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Вторая секция  -->
+      <section class="second__section">
+        <div class="container">
+          <h2 id="lessons" class="second__section title">преподаю</h2>
+          <div class="lessons__cards">
+            <div class="lesson-card">
+              <h3 class="lesson-card__title">акустическая гитара</h3>
+              <img src="/src/img/2 1.png" alt="акустическая гитара" />
+              <div class="description-button">
+                <a class="btn-call button_blue wsh" href="tel:+37377864480"
+                  >Записаться</a
+                >
+              </div>
+            </div>
+            <div class="lesson-card">
+              <h3 class="lesson-card__title">электро-гитара</h3>
+              <img src="/src/img/1 1.png" alt="электро-гитара" />
+              <div class="description-button">
+                <a class="btn-call button_blue wsh" href="tel:+37377864480"
+                  >Записаться</a
+                >
+              </div>
+            </div>
+            <div class="lesson-card">
+              <h3 class="lesson-card__title">укулеле<br />гитара</h3>
+              <img src="/src/img/3 1.png" alt="укулеле гитара" />
+              <div class="description-button">
+                <a class="btn-call button_blue wsh" href="tel:+37377864480"
+                  >Записаться</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- третья секция с каруселью -->
+      <section class="slide__section" >
+        <div 
+          id="carouselExampleIndicators"
+          data-bs-interval="8000"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <!-- Индикатор в каруселе, т.е. полосочки снизу в карсели -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <!-- Часть карсули с самими изображениями -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="item-content">
+                <h1>Акустическая гитара</h1>
+                <p>
+                  Предоставляю уроки игры на акустической гитаре от начального
+                  уровня до профессионального. Доступен онлайн и оффлайн форматы
+                  обучения, гибкий график обучения, домашние задания, работа над
+                  ошибками и много практики
+                </p>
+                <button type="button" class="btn btn-primary">Sign up</button>
+              </div>
+              <!-- контейнер затемняющего фона - overlay -->
+              <div class="overlay"></div>
+              <img
+                src="/src/img/acoustic.jpg"
+                class="d-block w-100"
+                alt="акустическая гитара"
+              />
+            </div>
+            <div class="carousel-item">
+              <div class="item-content">
+                <h1>Электро-гитара</h1>
+                <p>
+                  Предоставляю уроки игры на электро-гитаре от начального уровня
+                  до профессионального. Доступен онлайн и оффлайн форматы
+                  обучения, гибкий график обучения, домашние задания, работа над
+                  ошибками и много практики
+                </p>
+                <button type="button" class="btn btn-primary">Sign up</button>
+              </div>
+              <!-- контейнер затемняющего фона - overlay -->
+              <div class="overlay"></div>
+              <img
+                src="/src/img/electro.jpg"
+                class="d-block w-100"
+                alt="электро гитара"
+              />
+            </div>
+            <div class="carousel-item">
+              <div class="item-content">
+                <h1>Укулеле гитара</h1>
+                <p>
+                  Предоставляю уроки игры на укулеле от начального уровня до
+                  профессионального. Доступен онлайн и оффлайн форматы обучения,
+                  гибкий график обучения, домашние задания, работа над ошибками
+                  и много практики
+                </p>
+                <button type="button" class="btn btn-primary">Sign up</button>
+              </div>
+              <!-- контейнер затемняющего фона - overlay -->
+              <div class="overlay"></div>
+              <img
+                src="/src/img/ukulele.jpg"
+                class="d-block w-100"
+                alt=".укулеле гитара"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+          </button>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
