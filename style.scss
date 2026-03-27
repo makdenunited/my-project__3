@@ -1,0 +1,365 @@
+@import "./css/normalize.scss";
+@import "./css/reset.scss";
+
+// Убиваем горизонтальную прокрутку раз и навсегда!
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$font-stack: "Unbounded", sans-serif;
+$background-color: #f5f5f5;
+$content-color: #6e4d3c;
+$text-color: #fff;
+$hover-color: #fa6502;
+$hover-color-2: #243447;
+
+@font-face {
+  src: url(/src/fonts/Unbounded-Bold.ttf);
+  font-family: "Unbounded";
+  font-weight: 700; // Исправлено: 700 вместо bold для надежности
+  font-style: normal;
+}
+@font-face {
+  src: url(/src/fonts/Unbounded-Regular.ttf);
+  font-family: "Unbounded";
+  font-weight: 400; // Исправлено: 400 вместо несуществующего regular
+  font-style: normal;
+}
+
+@font-face {
+  src: url(/src/fonts/Montserrat-Regular.ttf);
+  font-family: "Montserrat";
+  font-weight: 400; // Исправлено: 400 вместо несуществующего regular
+  font-style: normal;
+}
+
+html,
+body,
+main {
+  font-family: $font-stack;
+  background-color: $background-color;
+  color: $text-color;
+  overflow-x: hidden; // Гарантия отсутствия горизонтального скролла
+}
+
+// ==========================================
+// ГЛАВНЫЙ КОНТЕЙНЕР ДЛЯ ЦЕНТРИРОВАНИЯ
+// ==========================================
+.container {
+  max-width: 1440px; // Максимальная ширина контента
+  width: 100%;
+  margin: 0 auto; // Центрирует сам контейнер
+  padding: 0 100px; // Твои отступы в 100px по краям!
+
+  // Адаптив отступов для мобилок (чтобы на телефоне 100px не съели весь экран)
+  @media (max-width: 991.98px) {
+    padding: 0 40px;
+  }
+  @media (max-width: 761.98px) {
+    padding: 0 15px;
+  }
+}
+
+// ==========================================
+// ШАПКА САЙТА (HEADER)
+// ==========================================
+.header {
+  background-color: #d9d9d9;
+  width: 100%;
+
+  // Внутренняя обертка шапки (внутри контейнера)
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 991.98px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__nav {
+    .nav__list {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 118px;
+      @media (max-width: 1199px) {
+        gap: 40px;
+      }
+      @media (max-width: 761.98px) {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .list__item a {
+        font-size: 20px;
+        color: $content-color;
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 5px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $content-color;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          color: $hover-color;
+          &::after {
+            transform: scaleX(1);
+            transform-origin: left;
+            background-color: $hover-color;
+          }
+        }
+
+        @media (max-width: 761.98px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .contacts-icon {
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+// ==========================================
+// КНОПКИ (Общие стили)
+// ==========================================
+.btn-call {
+  display: inline-block;
+  text-decoration: none;
+  color: $content-color;
+  padding: 13px 56px;
+  border: 1px solid $content-color;
+  border-radius: 50px;
+  box-shadow: 2px 5px 10px rgba(124, 123, 123, 0.5);
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #fff;
+    background-color: $hover-color;
+    border-color: $hover-color;
+  }
+
+  &.wsh {
+    box-shadow: none;
+    border-color: $background-color;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 761.98px) {
+    padding: 10px 30px;
+    font-size: 16px;
+  }
+}
+
+.button {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 100px;
+}
+
+.button_blue {
+  background-color: #314560;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+// ==========================================
+// ПЕРВАЯ СЕКЦИЯ (Главный экран)
+// ==========================================
+.first__section {
+  width: 100%;
+  min-height: 100vh;
+  background: url(/src/img/db4f8424-34e6-4427-afc2-a50bee8856bb\ 1.png)
+    no-repeat center / cover;
+  display: flex;
+  align-items: center; // Центрируем по вертикали
+
+  &-inner {
+    display: flex;
+    justify-content: flex-end; // Прижимает контент к правой стороне внутри контейнера
+  }
+
+  .description__content {
+    max-width: 50%;
+    margin: 100px;
+    @media (max-width: 991.98px) {
+      max-width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 20px;
+    }
+    @media (max-width: 761.98px) {
+      max-width: 100%;
+      padding: 20px;
+    }
+
+    .description-text {
+      color: $text-color;
+      h1 {
+        font-size: 70px;
+        font-weight: 800;
+        text-transform: uppercase;
+        @media (max-width: 1200px) {
+          font-size: 50px;
+        }
+        @media (max-width: 761.98px) {
+          font-size: 40px;
+        }
+      }
+
+      h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        @media (max-width: 761.98px) {
+          font-size: 22px;
+        }
+      }
+
+      p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        max-width: 700px;
+        font-weight: 100;
+        line-height: 1;
+
+        @media (max-width: 991.98px) {
+          max-width: 100%;
+          margin: 0 auto;
+        }
+        @media (max-width: 761.98px) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+// ==========================================
+// ВТОРАЯ СЕКЦИЯ (Карточки)
+// ==========================================
+.second__section {
+  background-color: $background-color;
+  padding-bottom: 80px;
+  width: 100%;
+
+  .title {
+    margin: 100px auto 60px;
+    text-align: center;
+    color: $hover-color-2;
+    font-size: 60px;
+    font-weight: 800;
+
+    @media (max-width: 761.98px) {
+      font-size: 40px;
+      margin: 60px auto 40px;
+    }
+  }
+
+  .lessons__cards {
+    display: flex;
+    gap: 40px;
+    // Я убрал padding: 0 120px отсюда, так как отступы теперь дает общий .container
+
+    @media (max-width: 991.98px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lesson-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(to bottom, #d9d9d9, #314560);
+      border-radius: 26px;
+      flex: 1;
+      max-width: 450px;
+      width: 100%;
+
+      &__title {
+        color: #6e4d3c;
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        min-height: 80px;
+      }
+
+      img {
+        width: 100%;
+        max-width: 200px;
+        object-fit: contain;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-10px);
+        }
+      }
+
+      .description-button {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.carousel-item {
+  position: relative;
+  img {
+    height: 700px;
+    object-fit: cover;
+  }
+}
+// Стили для описания уроков в слайдах
+
+.item-content {
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  max-width: 600px;
+  z-index: 2;
+}
+//  Стили для затемняющего фона - overlay
+.overlay {
+  top: 15%;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  background: black;
+  opacity: 0.5;
+}
+
